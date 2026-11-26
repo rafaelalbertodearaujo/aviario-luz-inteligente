@@ -73,6 +73,11 @@ uint16_t controle_calcula(uint8_t sp, int16_t luz)
     }
 
     erro = spf - (int32_t)luz * ESC;
+    /* ganho proporcional ao alvo abaixo do dia pleno: perto do escuro 1 permil de duty muda muito mais a luz
+     * (teste 9: 0 a 10% de duty dão 52% de luz) e o KP 1 do dia fazia a fita piscar no começo da rampa */
+    if (spf < (int32_t)SP_DIA * ESC) {
+        erro = (erro * spf) / ((int32_t)SP_DIA * ESC);
+    }
     base = ((int32_t)D_FIXO * spf) / ((int32_t)SP_DIA * ESC)
          + ((int32_t)KP * erro) / ((int32_t)KP_DIV * ESC);
 

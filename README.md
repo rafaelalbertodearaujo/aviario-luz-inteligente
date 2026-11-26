@@ -27,6 +27,7 @@ Abra a pasta como projeto no STM32CubeIDE (Import > Existing Projects into Works
 ```
 sh testes_pc/rodar.sh            # 63 testes com o config.h real (KI = 2)
 sh testes_pc/rodar.sh cfg_ki     # integrador ligado
+sh testes_pc/rodar.sh sim        # amanhecer e anoitecer com a planta não linear do teste 9
 ```
 
 O firmware gravado na placa na apresentação (25/11/2026) corresponde ao código deste repositório.

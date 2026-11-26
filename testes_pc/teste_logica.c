@@ -87,7 +87,10 @@ static void t_programa(void)
 /* duty esperado do feedforward + P puro, pelas constantes do config.h */
 static long esperado_p(int sp, int luz)
 {
-    long d = (long)D_FIXO * sp / (long)SP_DIA + (long)KP * (sp - luz) / (long)KP_DIV;
+    long e = sp - luz;
+    long d;
+    if (sp < (long)SP_DIA) e = e * sp / (long)SP_DIA;   /* ganho proporcional ao alvo abaixo do dia pleno (controle.c) */
+    d = (long)D_FIXO * sp / (long)SP_DIA + (long)KP * e / (long)KP_DIV;
     return d < 0 ? 0 : (d > 1000 ? 1000 : d);
 }
 #endif
