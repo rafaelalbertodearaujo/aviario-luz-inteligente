@@ -1,0 +1,9 @@
+Debug/
+Release/
+*.o
+*.elf
+*.map
+*.exe
+*.hex
+*.bin
+*.launch
