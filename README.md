@@ -4,6 +4,12 @@ Projeto final de Microprocessadores (Engenharia da Computação, Unoesc Joaçaba
 
 Um STM32F103C8T6 (Blue Pill) segue o programa de luz de um galpão de frango de corte, com amanhecer e anoitecer graduais, e complementa a luz que entra pela janela com um controle feedforward + P + I, lendo um LDR. Mede a energia da fita LED com um INA219 e compara com um timer comum. Tem tela OLED de 4 páginas, comandos e resumo por Bluetooth (HC-05) e um sensor de presença (PIR) que acende uma luz baixa de inspeção à noite. A demonstração usa uma maquete 1:25.
 
+## Autores
+
+- Rafael ([@rafaelalbertodearaujo](https://github.com/rafaelalbertodearaujo)): circuito, controle, calibração e firmware principal
+- Victor ([@VGZim10](https://github.com/VGZim10)): base do firmware, PIR, comunicação, relógio, montagem da potência
+- Nicolas: maquete, leitura do LDR, tela OLED, relatório e apresentação
+
 ## Pastas
 
 | Pasta | O que tem |
